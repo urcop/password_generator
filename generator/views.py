@@ -19,9 +19,9 @@ def password(request):
     if request.GET.get('numbers'):
         charaters.extend(list('1234567890'))
 
-    length = int(request.GET.get('length'))
+    length = request.GET.get('length')
     gen_password = ''
-    for i in range(length):
+    for i in range(int(length)):
         gen_password += choice(charaters)
 
     return render(request, 'generator/password.html', {'password': gen_password})

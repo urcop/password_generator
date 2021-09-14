@@ -1,0 +1,23 @@
+body {
+  background-image: url("../img/background.jpg"); }
+
+.title {
+  font-size: 45px;
+  margin-top: 40px;
+  text-align: center;
+  color: #fff; }
+
+.generate-form {
+  text-align: center;
+  margin-top: 70px;
+  color: #fff; }
+
+.generate-btn {
+  magrin-top: 20px; }
+
+.genered-password {
+  text-align: center;
+  color: #fff;
+  margin-top: 30px; }
+
+/*# sourceMappingURL=style.css.map */
