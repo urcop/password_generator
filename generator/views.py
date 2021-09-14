@@ -1,5 +1,4 @@
-from string import ascii_lowercase
-from string import ascii_uppercase
+from string import ascii_lowercase, ascii_uppercase
 from random import choice
 
 from django.shortcuts import render
@@ -10,18 +9,18 @@ def home(request):
 
 
 def password(request):
-    charaters = list(ascii_lowercase)
+    character = list(ascii_lowercase)
 
     if request.GET.get('uppercase'):
-        charaters.extend(list(ascii_uppercase))
+        character.extend(list(ascii_uppercase))
     if request.GET.get('special'):
-        charaters.extend(list('!@#$%^&*()'))
+        character.extend(list('!@#$%^&*()'))
     if request.GET.get('numbers'):
-        charaters.extend(list('1234567890'))
+        character.extend(list('1234567890'))
 
     length = request.GET.get('length')
     gen_password = ''
     for i in range(int(length)):
-        gen_password += choice(charaters)
+        gen_password += choice(character)
 
     return render(request, 'generator/password.html', {'password': gen_password})
